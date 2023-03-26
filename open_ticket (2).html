@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>open_ticket</title>
+</head>
+<link rel="stylesheet" href= "headercss.css">
+
+
+<body>
+    <div class="Entire-Header">
+        <!-- This is the Menu (Hamburger menu) which was showing on the top-->
+          <nav role="navigation">
+              <div class="logo" ><a href="{% url 'home' %}" style="color:black;">EVE</a></div>
+       <!--  <button type="submit" class="sgnup">Sign Up</button>  -->
+            <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+             <div id="profile">
+                 <a  href="{% url 'profile' %}"><li>
+                   <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                   <p>Hello, {{ user.username }}</p></li></a>
+             </div>
+     
+                 <a href="{% url 'home' %}"><li>Home</li></a><hr/>
+                 <a href="{% url 'post' %}" ><li>Health Blog</li></a></hr>
+     <hr/>           {% if user.is_authenticated %}
+     
+                 <a href="{% url 'profile' %}"><li>Profile</li></a><hr/>
+                 <a href="{% url 'logout' %}"><li>Logout</li></a><hr/>
+                {% else %}
+                 <a href="{% url 'login' %}"><li>Log In</li></a><hr/>
+                 <a href="{% url 'register' %}"><li>Sign Up</li></a><hr/>
+                {% endif %}
+            </ul>
+           </div>
+          </nav>
+     </div>
+    
+      <div style=" display: flex; flex-flow: row; flex-wrap: wrap;">
+       
+         
+           
+            
+               
+  <p style="margin: 5px 20px 20px 40px; background-color: rgba(214, 212, 212, 0.2); padding: 60px 30px 10px 60px; width: 300px;"> 
+    <H3 style="padding-top: 10vh; font-size: 40px; font-family: poppins, 'Times New Roman', Times, serif;color:  rgb(248, 104, 116);">Web Chat</H3>          
+ To use our web chat service, simply click on the chat icon on our website and start typing your message. A member of our team will respond to you as quickly as possible and provide you with the information and assistance you need.
+  </p>
+              
+           
+            <H3 class="mission-head" style="display: flex; flex-direction: row; justify-content: center;padding-top: 10vh; font-size: 40px; font-family:'Poppins', Times, sans-serif;color:  rgb(248, 104, 116);"> Open Ticket</H3>
+    
+           
+      
+             
+                <div style="padding: 5vh 20vh 10vh 20vh; margin-top: 10vh; background-color: rgba(230, 222, 222, 0.4);" >  
+                <p>Our open ticket section is just one of the ways we strive to provide our patients with exceptional customer service and support. We value your feedback and want to ensure that your experience with us is always positive. 
+
+                  To open a ticket, simply visit our website and fill out the ticket form, providing as much detail as possible about the issue you are experiencing. Once we receive your ticket, a member of our team will review it and work to resolve the issue as quickly as possible.
+                
+               </p>
+               
+                </div>
+                </div>
+                
+                    
+            
+          
+              
+            
+       
+    
+    
+    
+    
+    <br><br>
+    <hr>
+    
+    <div class="footer" style="display: flex; flex-direction: row; justify-content: center;">
+      
+        <a href="{% url 'contact' %}" style="padding-top:30px; padding-left:20px; padding-bottom: 20px; color: rgb(104, 98, 98);">Contact US</a>
+        <a href="{% url 'services' %}" style="padding-top:30px; padding-left:20px;padding-bottom: 20px;color: rgb(77, 73, 73); ">Services</a>
+        <a href="{% url 'privacy' %}" style="padding-top:30px; padding-left:20px;padding-bottom: 20px;color: rgb(88, 84, 84); ">privacy</a>
+    
+      
+    </div>
+     
+     
+</body>
+</html>
